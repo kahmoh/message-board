@@ -1,0 +1,14 @@
+extends layout
+
+block content
+  h1 Mini Message Board
+  h2 Messages
+  ul
+    - var count = 0
+    each message in messages
+      if count < messages.length
+        li
+          p #{messages[count].text}
+          p From: #{messages[count].user}
+          p Recieved: #{messages[count].added}
+          - count ++
